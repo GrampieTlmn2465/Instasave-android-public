@@ -47,6 +47,15 @@ class MainActivity : Activity() {
         }
         page.addView(linkInput, matchWidth())
 
+        val status = TextView(this).apply {
+            text = "Paste a public Instagram link to get started."
+            textSize = 14f
+            setTextColor(Color.DKGRAY)
+            gravity = Gravity.CENTER
+            setPadding(0, 24, 0, 0)
+        }
+        page.addView(status, matchWidth())
+
         val checkButton = Button(this).apply {
             text = "Check link"
             setOnClickListener {
@@ -65,15 +74,6 @@ class MainActivity : Activity() {
         }
         val buttonParams = matchWidth().apply { topMargin = 18 }
         page.addView(checkButton, buttonParams)
-
-        val status = TextView(this).apply {
-            text = "Paste a public Instagram link to get started."
-            textSize = 14f
-            setTextColor(Color.DKGRAY)
-            gravity = Gravity.CENTER
-            setPadding(0, 24, 0, 0)
-        }
-        page.addView(status, matchWidth())
 
         val note = TextView(this).apply {
             text = "Only save content you own or have permission to download."
